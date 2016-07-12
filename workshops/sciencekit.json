@@ -1,0 +1,156 @@
+{
+    "_id": "sciencekit",
+    "title": "Arduino Scientist Kit",
+    "description": "Learn how various electronics components work",
+    "board": "uno",
+    "board_opts": "",
+    "components": [
+        {
+            "name": "lightSensor",
+            "class": "Sensor",
+            "config": {
+                "pin": "A0",
+                "freq": 200
+            }
+        },
+        {
+            "name": "thermometer",
+            "class": "Thermometer",
+            "config": {
+                "pin": "A1",
+                "freq": 200,
+                "controller": "LM35"
+            }
+        },
+        {
+            "name": "button",
+            "class": "Button",
+            "config": {
+                "pin": "2"
+            }
+        },
+        {
+            "name": "servo",
+            "class": "Servo",
+            "config": {
+                "pin": "4",
+                "type": "standard"
+            }
+        },
+        {
+            "name": "RGBLED",
+            "class": "Led.RGB",
+            "config": {
+                "pins": {
+                    "red": 9,
+                    "green": 10,
+                    "blue": 11
+                }
+            }
+        },
+        {
+            "name": "led03",
+            "class": "Led",
+            "config": {
+                "pin": "3"
+            }
+        },
+        {
+            "name": "led05",
+            "class": "Led",
+            "config": {
+                "pin": "5"
+            }
+        },
+        {
+            "name": "led06",
+            "class": "Led",
+            "config": {
+                "pin": "6"
+            }
+        }
+    ],
+    "workshop_blocks": [
+        {
+            "name": "while_button",
+            "category": "controller"
+        },
+        {
+            "name": "console_log_value",
+            "category": "value"
+        },
+        {
+            "name": "math_number",
+            "category": "value"
+        },
+        {
+            "name": "text",
+            "category": "value"
+        }
+    ],
+    "exercises": [
+        {
+            "name": "Blink an LED",
+            "description": "Make the LED connected to pin 6 (an actuator) turn on and off when you press the button on the screen. One you have this working, can you make it fade in and out?",
+            "components": [
+                "led06"
+            ]
+        },
+        {
+            "name": "Move a servo",
+            "description": "Make the servo (an actuator) attached to pin 4 change position as you press and release the green button?",
+            "components": [
+                "servo"
+            ]
+        },
+        {
+            "name": "Read the light level",
+            "description": "Take a reading from the light sensor (a sensor) and write the value out to the console. You'll have to watch the code console to see the data. What happens when you put your fingers over the sensor and remove it?",
+            "components": [
+                "lightSensor"
+            ]
+        },
+        {
+            "name": "Temperature light",
+            "description": "Take a reading from the temperature sensor and then use the temperature reading to set the RGB LED to blue if it's cold, orange if warm and red if hot.",
+            "components": [
+                "RGBLED", "thermometer"
+            ],
+            "exercise_blocks": [
+                {
+                    "name": "controls_if",
+                    "category": "logic"
+                },
+                {
+                    "name": "logic_compare",
+                    "category": "logic"
+                }
+            ]
+        },
+        {
+            "name": "Light switch",
+            "description": "Take a reading from a button (a sensor) and then make that turn the LED on pin 6 on or off. ",
+            "components": [
+                "button", "led06"
+            ]
+        },
+        {
+            "name": "Free play",
+            "description": "You can use all of the components now to come up with something",
+            "components": [
+                "button", "thermometer", "led03", "led05", "led06", "RGBLED", "lightSensor", "servo"
+            ],
+            "exercise_blocks": [
+                {
+                    "name": "controls_if",
+                    "category": "logic"
+                },
+                {
+                    "name": "logic_compare",
+                    "category": "logic"
+                }
+            ]
+        }
+    ]
+}
+

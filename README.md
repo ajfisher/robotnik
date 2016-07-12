@@ -15,3 +15,17 @@ This was developed for a workshop for Makerland Conference. If I was smarter, I 
 `npm start` - to run the electron version
 `npm run webserver` - to run the web version
 `npm run dev` - to run the web version with nodemon and asset recompilation
+
+## Blocks currently supported
+
+These blocks directly map to Johnny-Five components:
+
+* Button
+* Led
+* Led.RGB
+* Motor
+* Sensor
+* Servo
+* Thermometer
+
+Additional robotnik blocks which are 

@@ -1,7 +1,7 @@
 {
-    "_id": "mkw",
-    "title": "Melbourne Knowledge Week 2016, NodeBots workshop",
-    "description": "This is the workshop for programming mBots",
+    "_id": "mbot",
+    "title": "Programming a makeblock mBot",
+    "description": "Program an mBot using Robotnik",
     "board": "uno",
     "board_opts": "",
     "components": [
@@ -81,9 +81,6 @@
         {
             "name": "Blink an LED",
             "description": "First, try to make the little Blue LED (an actuator) blink when you push a button. Can you change the speed of the blinking? Can you stop it when you release the button?",
-            "board_opts": {
-                "port": "/dev/cu.wchusbserial1410"
-            },
             "components": [
                 "led13"
             ]

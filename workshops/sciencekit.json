@@ -42,31 +42,31 @@
             "class": "Led.RGB",
             "config": {
                 "pins": {
-                    "red": 9,
-                    "green": 10,
-                    "blue": 11
+                    "red": 3,
+                    "green": 5,
+                    "blue": 6
                 }
             }
         },
         {
-            "name": "led03",
+            "name": "led09",
             "class": "Led",
             "config": {
-                "pin": "3"
+                "pin": "9"
             }
         },
         {
-            "name": "led05",
+            "name": "led10",
             "class": "Led",
             "config": {
-                "pin": "5"
+                "pin": "10"
             }
         },
         {
-            "name": "led06",
+            "name": "led11",
             "class": "Led",
             "config": {
-                "pin": "6"
+                "pin": "11"
             }
         }
     ],
@@ -91,24 +91,40 @@
     "exercises": [
         {
             "name": "Blink an LED",
-            "description": "Make the LED connected to pin 6 (an actuator) turn on and off when you press the button on the screen. One you have this working, can you make it fade in and out?",
+            "description": "Make the LED connected to pin 11 (an actuator) turn on and off when you press the button on the screen. Once you have this working, can you make it fade in and out?",
             "components": [
-                "led06"
-            ]
+                "led11"
+            ],
+            "diagram": "https://raw.githubusercontent.com/ajfisher/robotnik-workshop/master/exercises/images/led_bb.png",
+            "link": "https://github.com/ajfisher/robotnik-workshop/blob/master/exercises/led.md"
         },
         {
             "name": "Move a servo",
             "description": "Make the servo (an actuator) attached to pin 4 change position as you press and release the green button?",
             "components": [
                 "servo"
-            ]
+            ],
+            "diagram": "https://raw.githubusercontent.com/ajfisher/robotnik-workshop/master/exercises/images/servo_bb.png",
+            "link": "https://github.com/ajfisher/robotnik-workshop/blob/master/exercises/servo.md"
         },
         {
             "name": "Read the light level",
             "description": "Take a reading from the light sensor (a sensor) and write the value out to the console. You'll have to watch the code console to see the data. What happens when you put your fingers over the sensor and remove it?",
             "components": [
-                "lightSensor"
-            ]
+                "lightSensor", "led11"
+            ],
+            "exercise_blocks": [
+                {
+                    "name": "controls_if",
+                    "category": "logic"
+                },
+                {
+                    "name": "logic_compare",
+                    "category": "logic"
+                }
+            ],
+            "diagram": "https://raw.githubusercontent.com/ajfisher/robotnik-workshop/master/exercises/images/photoresistor_bb.png",
+            "link": "https://github.com/ajfisher/robotnik-workshop/blob/master/exercises/photoresistor.md"
         },
         {
             "name": "Temperature light",
@@ -125,20 +141,24 @@
                     "name": "logic_compare",
                     "category": "logic"
                 }
-            ]
+            ],
+            "diagram": "https://raw.githubusercontent.com/ajfisher/robotnik-workshop/master/exercises/images/temperature-lm35_bb.png",
+            "link": "https://github.com/ajfisher/robotnik-workshop/blob/master/exercises/temperature.md"
         },
         {
             "name": "Light switch",
-            "description": "Take a reading from a button (a sensor) and then make that turn the LED on pin 6 on or off. ",
+            "description": "Take a reading from a button (a sensor) and then make that turn the LED on pin 11 on or off. ",
             "components": [
-                "button", "led06"
-            ]
+                "button", "led11"
+            ],
+            "diagram": "https://raw.githubusercontent.com/ajfisher/robotnik-workshop/master/exercises/images/button_bb.png",
+            "link": "https://github.com/ajfisher/robotnik-workshop/blob/master/exercises/button.md"
         },
         {
             "name": "Free play",
             "description": "You can use all of the components now to come up with something",
             "components": [
-                "button", "thermometer", "led03", "led05", "led06", "RGBLED", "lightSensor", "servo"
+                "button", "thermometer", "led09", "led10", "led11", "RGBLED", "lightSensor", "servo"
             ],
             "exercise_blocks": [
                 {

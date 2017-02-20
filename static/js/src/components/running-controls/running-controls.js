@@ -48,13 +48,14 @@ export default function(commands) {
 
             if (consolestr.search("firmwareConnectionError") >= 0) {
                 this.runningStatus = "Firmware timeout. Stop, check, run code again";
-                var msg = "The connection to the firmware has timed out.";
+                var msg = "The connection to the firmware has timed out. ";
                 msg += "Please check the following:\n\n";
                 msg += " - If using USB, check the cable is plugged in\n";
-                msg += " - If using BT, check TX/RX is correct\n";
-                msg += " - If using BT, make sure you're not also using USB\n";
+                msg += " - If using bluetooth, check TX/RX is correct\n";
+                msg += " - If using bluetooth, make sure you're not also using USB\n";
                 msg += "\n";
-                msg += "Intermittent connections may also occur with Bluetooth in noisy environs";
+                msg += "Intermittent connections may also occur with Bluetooth in noisy environs.\n\n";
+                msg += "Check the above then hit the 'stop' button, check your code and try to 'Run' again.";
                 window.alert(msg);
 
                 $scope.$apply();

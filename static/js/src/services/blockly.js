@@ -41,11 +41,13 @@ export default function(Workspaces) {
         robotnikGenerator.init();
         robotnikBlocks.init();
 
+
         Blockly.inject(canvas, {
             path: './vendor/blockly/',
             toolbox: toolbox.xml,
             trashcan: true
         });
+
     }
 
     function code() {

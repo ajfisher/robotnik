@@ -13,9 +13,11 @@
 <p>{{vm.exercise.description}}</p>
 
 <div ng-if="vm.exercise.diagram">
-    <img ng-src="{{vm.exercise.diagram}}" width="100%"/>
+    <a target="_blank" ng-href="{{vm.exercise.diagram}}" title="View large size in in new tab">
+        <img ng-src="{{vm.exercise.diagram}}" width="100%"/>
+    </a>
 </div>
 
-<p ng-if="vm.exercise.link">
-    <a target="_blank" ng-href="{{vm.exercise.link}}">See all exercise notes</a>
+<p class="btn notes" ng-if="vm.exercise.link">
+    <a target="_blank" ng-href="{{vm.exercise.link}}">See full exercise notes</a>
 </p>

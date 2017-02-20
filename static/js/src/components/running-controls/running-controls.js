@@ -45,6 +45,20 @@ export default function(commands) {
                 this.runningStatus = "Now running";
                 $scope.$apply();
             }
+
+            if (consolestr.search("firmwareConnectionError") >= 0) {
+                this.runningStatus = "Firmware timeout. Stop, check, run code again";
+                var msg = "The connection to the firmware has timed out.";
+                msg += "Please check the following:\n\n";
+                msg += " - If using USB, check the cable is plugged in\n";
+                msg += " - If using BT, check TX/RX is correct\n";
+                msg += " - If using BT, make sure you're not also using USB\n";
+                msg += "\n";
+                msg += "Intermittent connections may also occur with Bluetooth in noisy environs";
+                window.alert(msg);
+
+                $scope.$apply();
+            }
             console.log(consolestr);
         }
       }.bind(this));
@@ -105,8 +119,9 @@ export default function(commands) {
   function stop(scope) {
     return function() {
       scope.show = false;
+      console.log("Sending a control stop");
       this.runningStatus = "Waiting for connection...";
-      commands.send( 'control', 'stop' );
+      commands.send( 'control', ['stop', 'fired'] );
     }
   }
 }
